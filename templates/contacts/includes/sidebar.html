@@ -1,0 +1,139 @@
+{% load static %}
+
+
+<div class="sidebar collapse navbar-collapse" id="navbarSupportedContent" data-background-color="black">
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="nav-item {% if request.path == '/dashboard/' %}active{% endif %}" href="#">
+                <a class="nav-link {% if request.path == '/dashboard/' %}active{% endif %}" href="#">
+                    <img src="{% static '' %}nav-icons/1.svg">
+                    <p>Dashboard </p>
+                </a>
+            </li>
+            <li class="nav-item ">
+            <li class="nav-item {% if request.path == '/division_type/' or request.path == '/utility_type/' or request.path == '/bank_branch/' %}active{% endif %}">
+                <a class="nav-link" data-toggle="collapse"
+                   href="#plan">
+                    <img src="{% static '' %}nav-icons/12.svg">
+                    <p>Configuration</p>
+                </a>
+                <div class="{% if request.path == '/division_type/' or request.path == '/utility_type/' or request.path == '/bank_branch/' %}collapsed{% else %}collapse{% endif %}" id="plan">
+                    <ul class="nav sub-nav">
+                        <li class="nav-item {% if request.path == '/division_type/' %}active{% endif %}">
+                            <a class="nav-link" href="#">
+                                <i class="subicon"></i>
+                                <p>Division Type</p>
+                            </a>
+                        </li>
+                        <li class="nav-item {% if request.path == '/utility_type/' %}active{% endif %}">
+                            <a class="nav-link" href="#">
+                                <i class="subicon"></i>
+                                <p>Utility Type</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item {% if request.path == '/bank_branch/' %}active{% endif %}">
+                            <a class="nav-link" href="#">
+                                <i class="subicon"></i>
+                                <p>Bank Branch</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#pagesUser">
+                    <img src="{% static '' %}nav-icons/10.svg">
+                    <p> User Management
+
+                    </p>
+                </a>
+                <div class="collapse" id="pagesUser">
+                    <ul class="nav sub-nav">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">
+                                <i class="subicon"></i>
+                                <p>Role</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">
+                                <i class="subicon"></i>
+                                <p>User</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">
+                                <i class="subicon"></i>
+                                <p>User Privilege</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="#">
+                    <img src="{% static '' %}nav-icons/2.svg">
+                    <p> DWASA DIVISION </p>
+                </a>
+            </li>
+
+
+            <li class="nav-item ">
+                <a class="nav-link"  href="#">
+                    <img src="{% static '' %}nav-icons/2.svg">
+                    <p> UTILITY PROVIDER </p>
+                </a>
+            </li>
+
+            <li class="nav-item ">
+            <a class="nav-link"  href="#">
+                <img src="{% static '' %}nav-icons/2.svg">
+                <p> SERVICE STATION </p>
+            </a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="#">
+                    <img src="{% static ''%}nav-icons/8.svg">
+                    <p> BILL ENTRY </p>
+                </a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="">
+                    <img src="{% static ''%}nav-icons/8.svg">
+                    <p> Reports </p>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+{#<ul class="nav" style="#}
+{#display: flex;#}
+{#position: absolute;#}
+{#bottom: 35px;#}
+{#left: 0;#}
+{#right: 0;#}
+{#margin: auto;#}
+{#text-align: center;#}
+{#justify-content: center;#}
+{#font-size: 14px;#}
+{#font-weight: 400;#}
+{#font-family: 'Roboto';#}
+{#color: #fff !important;#}
+{#">#}
+{#  <li class="nav-item ">#}
+{#      <p> Version 1.0 </p>#}
+{#  </li>#}
+{#</ul>#}
+
+</div>
+

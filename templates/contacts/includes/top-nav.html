@@ -1,0 +1,69 @@
+{% load static %}
+<nav class="navbar navbar-inverse navbar-header">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <div class="navbar-minimize inner-head-title pull-left">
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <img style="height: 55px;width: 46px" srcset="{%static '' %}img/django.png 2x" src="{%static ''%}img/django.png" >
+                                
+                            <td><h4>DJAGO</h4></td>
+                        </tr>
+                        <tr>
+                            <td><h3>CRUD Template</h3></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                {% if 'logged_in' in request.session %}
+                    <ul class="header-navigation pull-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0)">
+                            <strong>User: {{ request.session.user_name}}</strong>
+                        </a>
+                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="javascript: void(0)">#}
+{#                            <i class="lmms-lmms-settings"></i>#}
+{#                        </a>#}
+{#                    </li>#}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="javascript: void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="lmms-lmms-notification"></i>
+                                <span class="notification">2</span>
+{#                                    <p class="d-lg-none d-md-block">#}
+{#                                        Some Actions#}
+{#                                    </p>#}
+                        </a>
+
+                   <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                            <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                        </div>
+
+{#                    <a class="nav-link" href="{% url 'wasa_utility:notification'  %}" id="navbarDropdownMenuLink">#}
+{#                            <i class="lmms-lmms-notification"></i>#}
+{##}
+{#                        </a>#}
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="{% url 'wasa_utility:logout' %}">
+                            <i class="lmms-lmms-logout"></i>
+                        </a>
+                    </li>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </ul>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>

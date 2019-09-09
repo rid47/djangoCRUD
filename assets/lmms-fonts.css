@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Nirmala UI Semilight';
+    src: url('fonts/hinted-NirmalaUI-Semilight.eot');
+    src: url('fonts/hinted-NirmalaUI-Semilight.eot?#iefix') format('embedded-opentype'),
+        url('fonts/hinted-NirmalaUI-Semilight.woff2') format('woff2'),
+        url('fonts/hinted-NirmalaUI-Semilight.woff') format('woff'),
+        url('fonts/hinted-NirmalaUI-Semilight.ttf') format('truetype'),
+        url('fonts/hinted-NirmalaUI-Semilight.svg#NirmalaUI-Semilight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('fonts/hinted-BebasNeueRegular.eot');
+    src: url('fonts/hinted-BebasNeueRegular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/hinted-BebasNeueRegular.woff2') format('woff2'),
+        url('fonts/hinted-BebasNeueRegular.woff') format('woff'),
+        url('fonts/hinted-BebasNeueRegular.ttf') format('truetype'),
+        url('fonts/hinted-BebasNeueRegular.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Droid Sans';
+    src: url('fonts/hinted-DroidSans.eot');
+    src: url('fonts/hinted-DroidSans.eot?#iefix') format('embedded-opentype'),
+        url('fonts/hinted-DroidSans.woff2') format('woff2'),
+        url('fonts/hinted-DroidSans.woff') format('woff'),
+        url('fonts/hinted-DroidSans.ttf') format('truetype'),
+        url('fonts/hinted-DroidSans.svg#DroidSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Droid Sans';
+    src: url('fonts/hinted-DroidSans-Bold.eot');
+    src: url('fonts/hinted-DroidSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/hinted-DroidSans-Bold.woff2') format('woff2'),
+        url('fonts/hinted-DroidSans-Bold.woff') format('woff'),
+        url('fonts/hinted-DroidSans-Bold.ttf') format('truetype'),
+        url('fonts/hinted-DroidSans-Bold.svg#DroidSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dense';
+    src: url('fonts/hinted-Dense-Regular.eot');
+    src: url('fonts/hinted-Dense-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/hinted-Dense-Regular.woff2') format('woff2'),
+        url('fonts/hinted-Dense-Regular.woff') format('woff'),
+        url('fonts/hinted-Dense-Regular.ttf') format('truetype'),
+        url('fonts/hinted-Dense-Regular.svg#Dense-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/hinted-Montserrat-Medium.eot');
+    src: url('fonts/hinted-Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/hinted-Montserrat-Medium.woff2') format('woff2'),
+        url('fonts/hinted-Montserrat-Medium.woff') format('woff'),
+        url('fonts/hinted-Montserrat-Medium.ttf') format('truetype'),
+        url('fonts/hinted-Montserrat-Medium.svg#Montserrat-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+

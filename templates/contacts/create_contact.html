@@ -1,0 +1,107 @@
+{% extends 'contacts/base.html' %}
+
+{% load static %}
+
+{% block head_title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+        <p class="text-left" style="font-size: smaller">
+                Create Contact  <a href="#">Link</a>
+            </p>
+            <div class="row">
+                <div class="ml-auto mr-auto mt-4 pt-5 col-md-9">
+
+{#                    -----------------------MESSAGE----------------------------------------------#}
+
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert-dismissable alert alert-{% if message.level_tag == 'error' %}danger{% elif message.level_tag == 'success' %}success{% endif %}"
+                             role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{message.message}}
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+
+
+
+                    <div class="card input custom-form" style="padding: 10px">
+
+{#                        --------------------------------TITLE-------------------------------------#}
+
+
+                        <div class="form-title">
+                            <h4 class="card-title" style="font-size: 20px;padding: 5px">Contact List</h4>
+                            <div class="row">
+
+                                <a href="{% url 'contacts:all_contacts' %}">
+                                    <button type="submit" class="btn btn-sm btn-info ">show list</button>
+                                </a>
+                            </div>
+                        </div>
+{#--------------------------------------------FORM-------------------------------------------------#}
+
+                        <form id="div_create_form" class="card-body" action="{% url 'contacts:create_contact' %}" method="post">
+                            {% csrf_token %}
+                            {{ form.media.js }}
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="custom-label">Name<span style="color: red">*</span></label>
+                                    <div class="form-group custom-input">
+                                        {{form.name}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="custom-label">Email<span style="color: red">*</span></label>
+                                    <div class="form-group custom-input">
+                                        {{form.email}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="custom-label">Address<span style="color: red">*</span></label>
+                                    <div class="form-group custom-input">
+                                        {{form.address}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="custom-label">Phone<span style="color: red">*</span></label>
+                                    <div class="form-group custom-input">
+                                        {{form.phone}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer ml-auto mr-auto">
+                            <button type="submit" class="btn btn-fill btn-round btn-submit">Submit</button>
+                        </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block additional_script %}
+
+<script>
+    $(document).ready(function () {
+        $('#div_create_form input').addClass('form-control');
+        {#$('#example').DataTable();#}
+    })
+</script>
+{% endblock %}
+

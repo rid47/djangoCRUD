@@ -1,0 +1,72 @@
+{% extends 'contacts/base.html' %}
+
+{% load static %}
+
+{% block head_title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="ml-auto mr-auto mt-4 pt-5 col-md-9">
+          {% if messages %}
+            {% for message in messages %}
+            <div class="alert-dismissable alert alert-{% if message.level_tag == 'error' %}danger{% elif message.level_tag == 'success' %}success{% endif %}"
+                 role="alert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{message.message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="card custom-files">
+     <div class="form-title">
+                <h4 class="card-title" style="font-size: 20px;padding: 5px">Profile</h4>
+                <div class="row">
+                    <a href="{% url 'contacts:all_contacts' %}">
+                        <button type="submit" class="btn btn-sm btn-info ">show list</button>
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+{#                <div class="clearfix">#}
+{#                    <div class="body-nest" id="Filtering">#}
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Name:</label> {{ profile.name }}
+                            </div>
+                            <div class="form-group">
+                                <label>Email:</label> {{ profile.email }}
+                            </div>
+                            <div class="form-group">
+                                <label>Contact No:</label> {{ profile.phone }}
+                            </div>
+                            <div class="form-group">
+                                <label>Address :</label> {{ profile.address }}
+                            </div>
+                        </div>
+{#                    </div>#}
+{#                </div>#}
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block additional_script %}
+<script>
+{#$(document).ready(function() {#}
+{#    $('#example').DataTable();#}
+{#} );#}
+{#</script>#}
+
+{% endblock %}
+
