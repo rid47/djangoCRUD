@@ -3,6 +3,8 @@ import json
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from datetime import datetime
+# from django.utils import
 from .forms import *
 
 '###--------------------------READ DATA FROM DB---------------------------------------###'
@@ -34,7 +36,7 @@ def contacts(request):
 
 def delete_contact(request, pk):
     try:
-        Contact.objects.filter(pk=pk).update(delete_status=1)
+        Contact.objects.filter(pk=pk).update(delete_status=1, update_date=datetime.now())
         messages.success(request, "Data Deleted!")
     except Exception as e:
         error = 'on line {}'.format(sys.exc_info()[-1].tb_lineno), e
@@ -135,7 +137,7 @@ def edit_contact(request, pk):
                 # checking if updated name already exists in db (.exclude(pk=pk)clause is for if name is not updated
                 # at all)
 
-                exist_name = Contact.objects.filter(name=request.POST['name']).exclude(pk=pk).exists()
+                exist_name = Contact.objects.filter(name=request.POST['name'], delete_status=0).exclude(pk=pk).exists()
             except Exception as e:
                 error = 'on line {}'.format(sys.exc_info()[-1].tb_lineno), e
                 messages.error(request, error)
@@ -148,9 +150,10 @@ def edit_contact(request, pk):
                     try:
                         Contact.objects.filter(pk=pk).update(
                             name=request.POST['name'].strip(),
-                            email =request.POST['email'].strip(),
-                            address= request.POST['address'].strip(),
-                            phone= request.POST['phone'].strip()
+                            email=request.POST['email'].strip(),
+                            address=request.POST['address'].strip(),
+                            phone=request.POST['phone'].strip(),
+                            update_date=datetime.now()
 
                         )
                         messages.success(request, "Contact Updated!")
